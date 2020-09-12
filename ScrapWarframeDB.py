@@ -8,7 +8,20 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 # gun = soup.find_all('tr')[1].get_text()
 
-for gun in soup.select('tr'):
-    print(gun.get_text())
 
-print(gun)
+primaryWeaponsData = soup.select('div[title="Primary"] tr td')
+
+count = 0
+for gun in primaryWeaponsData:
+    print(gun.get_text() + "     =     " + str(count))
+    count+= 1
+
+
+# for x in range(0,12):
+
+#     print(dataArsenal[x].get_text())
+
+
+
+# print(dataArsenal.get_text())
+
